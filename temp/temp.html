@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #app {
+        width: 200px;
+        height: 200px;
+        border:1px solid red;
+    }
+</style>
+<body>
+      <div id='app'>
+        <div class="tops">11</div>
+        <div class="bots">22</div>
+      </div>
+</body>
+</html> 
+<script>
+  var app =document.getElementById('app')
+  var tops = document.getElementsByClassName('tops')[0]
+  var bots = document.getElementsByClassName('bots')[0]
+  console.log(tops)
+  var str =''
+  var arr =[
+                {
+                    tet: 'opt1',
+                    child: [
+                        'opt1.1',
+                        'opt1.2',
+                        'opt1.3'
+                    ]
+                },
+                {
+                    tet: 'opt2',
+                    child: [
+                        'opt2.1',
+                        'opt2.2',
+                        'opt2.3'
+                    ]
+                }
+            ]
+            
+ for(var i=0;i< arr.length;i++){
+    str+="<span onClick='add'>"+arr[i].tet+"<span>"
+    tops.innerHTML=str
+ }
+var sps = document.getElementsByTagName('span')
+for(var i=0;i<sps.length;i++){
+    sps[i].onclick = function(){
+        console.log(this)
+    }
+}
+function add(){
+    alert(1)
+}
+
+    //拷贝     浅拷贝
+//     var params = {
+//         name:'xxxxx',
+//         age:8
+//     }  
+//     var params2 = {}
+//     for(var i in params) {
+//         params2[i] = params[i]
+//     }
+//     //params.age=20   
+//     console.log(params2)
+
+//  function dg(n){
+//     if(n ===1) {
+//         return 1
+//     }
+//    return dg(n)*(n-1)
+//  }
+
+
+//  function deep(params,copy) {
+//      for (var i in params) {
+//          if(typeof params[i] === 'object'){
+//              copy[i] = {}
+//              deep(params[i],copy[i])
+//          }else{
+//              copy[i] = params[i]
+//          }
+//      }
+//      return copy
+//  }
+
+ 
+
+
+
+
+
+</script>     
